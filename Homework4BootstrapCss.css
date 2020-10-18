@@ -1,0 +1,47 @@
+/* Name: Kaylin Ridge
+CS Username: kridge
+Email: kaylin_ridge@student.uml.edu
+Date of Creation: 9 October 2020
+Date of Upload: 18 October 2020 (Extension Approved by Professor)
+GUI Programming I Autumn 2020 (91.61)
+Description: CSS for Homework 4. There isn't much here because 99%
+of the styling was done using exclusively Bootstrap. The CSS here is
+just changing a few colors, bolding headings, and ensuring that the
+footer is positioned properly (centered).
+
+Color Palette:
+Gradient Grey: #666666
+Gradient Teal: #009999
+Body Text Color: #cc5eff (Light purple)
+Container Back Color: #343a40 (Dark Grey)
+Jumbotron Back Color:  #c7abbc (Pastel Pink)
+Jumbotron Text color: #006356 (Dark Teal) */
+
+    body {
+        background-image: linear-gradient(#666666, #009999);
+        color: #cc5eff;
+    }
+    .container {
+        background-color: #343a40;
+        padding-bottom: 5%;
+    }
+
+    /* Jumbotron- ALWAYS use WITHIN container!! Makes text bigger
+    and puts it in a box. Background color and text color specified. */
+    .jumbotron {
+        background-color: #c7abbc;
+        color: #006356;
+    }
+
+    h3 {
+        font-weight: bold;
+    }
+    h5 {
+        font-weight: bold;
+    }
+    h6 {
+        font-weight: bold;
+    }
+    footer {
+        text-align: center;
+    }
