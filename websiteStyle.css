@@ -1,0 +1,189 @@
+/* REFERENCE ME AS NEEDED I AM THE OLD CSS!!!! */
+
+/*
+<!-- Name: Kaylin Ridge -->
+<!-- CS Username: kridge -->
+<!-- Email: kaylin_ridge@student.uml.edu -->
+<!-- Date of Creation: 16 September 2020 -->
+<!-- Date of Upload: 22 September 2020 -->
+<!-- GUI Programming I Autumn 2020 (91.61) -->
+<!-- Description: Website serves as introduction and will be
+a directory for future assignments. -->
+*/
+
+/* THIS IS THE CSS */
+
+/* Color palette (This is for my personal reference):
+
+Main Text Color (Dark Grey): #262626
+Teal: #009999 (Header shadow, bottom of gradient, visited links)
+Light Grey: #666666
+Dark Pink : #99004d
+Dark Purple/ magenta: #660066
+Gold: #b38f00
+Border (neon) Pink: #e600ac */
+
+    /* Header - Courier Font, sized up to 300%. Aligned left, colored teal,
+    made bold, gave shadow and underline overline decoration. */
+    header {
+        font-family: "Lucida Console", Courier, monospace;
+        font-size: 300%;
+        text-align: left;
+        color: #262626; /* Teal */
+        font-weight: bold;
+        text-shadow: 2px 2px 2px #009999;
+        text-decoration: underline overline;
+    }
+
+    /* SIDENAV- From W3Schools:
+    https://www.w3schools.com/howto/howto_css_fixed_sidebar.asp */
+    /* The sidebar menu */
+    /* Made courier again (making all font courier). Specifications for nav bar
+    below (on left side- contains links to pages for future homework). */
+    .sidenav {
+        font-family: "Lucida Console", Courier, monospace;
+        height: 100%; /* Full-height: remove this if you want "auto" height */
+        width: 160px; /* Set the width of the sidebar */
+        position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+        z-index: 1; /* Stay on top */
+        top: 0; /* Stay at the top */
+        left: 0;
+        background-color: #262626; /* Grey to match text on main page */
+        overflow-x: hidden; /* Disable horizontal scroll */
+        padding-top: 20px;
+      }
+    /* The navigation menu links */
+    .sidenav a {
+        font-family: "Lucida Console", Courier, monospace;
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 140%;
+        display: block;
+    }
+    /* When you mouse over the navigation links, change their color */
+    /* This may be redundant since further down I made it so that ALL
+    links */
+    .sidenav a:hover {
+        color: #e600ac; /* Pink to match dotted borders on main page */
+    }
+
+    /* Link Styling used code from W3Schools: */
+    /* https://www.w3schools.com/css/css_link.asp */
+    /* unvisited link */
+    a:link {
+        color: #99004d;  /* Unvisited: Magenta */
+    }
+    /* visited link */
+    a:visited {
+        color:  #009999;  /* Visited: Teal */
+    }
+    /* mouse over link */
+    a:hover {
+        color: #e600ac;  /* Mouse Over: Pink */
+    }
+
+    /* Style page content */
+    /* Made div main in html - applies to everything in main.
+    Sets font, pushes margin over so that sidebar isn't covering
+    anything up. Gradient background - Top light grey to bottom teal */
+    .main {
+        background-image: linear-gradient(#666666, #009999);
+        font-family: "Lucida Console", Courier, monospace;
+        margin-left: 160px; /* Same as the width of the sidebar */
+        padding: 0px 0px;
+    }
+
+    /* h2 - Dark grey, 200% font size (2/3 size of main header).
+    Gave an underline and a gold shadow and for decoration. */
+    h2 {
+        font-size: 200%;
+        color: #262626;
+        text-shadow: 1px 1px 1px #b38f00;
+        text-decoration: underline;
+    }
+    /* h3 - made half the size of header (150%). Gave
+    dark purple/ magenta shadow for decoration. */
+    h3 {
+        font-size: 150%;
+        color: #262626;
+        text-shadow: 1px 1px 1px #660066;
+    }
+    /* h5 - made slightly smaller than h3 but slightly larger than
+    main text of page. Gave a dark pink shadow for decoration. */
+    h5 {
+        font-size: 120%;
+        color: #262626;
+        text-shadow: 1px 1px 1px #99004d;
+    }
+    /* Article styling - text of articles is grey. Articles
+    are aligned to the left. */
+    article {
+        color: #262626;
+        text-align: left;
+    }
+    /* Paragraph styling- font-sise 100, dark grey color.
+    Paragraphs are aligned to center. */
+    p {
+        font-size: 100%;
+        color: #262626;
+        text-align: center;
+    }
+    /* Ordered lists- dark grey text. Added dotted
+    pink border to top and bottom for decoration. */
+    ol {
+        color: #262626;
+        border-top: 1px dotted #e600ac;
+        border-bottom: 1px dotted #e600ac;
+    }
+    /* Unordered lists- dark grey text. Added dotted
+    pink border to top and bottom for decoration. */
+    ul {
+        color: #262626;
+        border-top: 1px dotted #e600ac;
+        border-bottom: 1px dotted #e600ac;
+    }
+
+    /* This section is based on code from W3Schools:
+    https://www.w3schools.com/css/css_dimension.asp
+    https://www.w3schools.com/css/css3_images.asp */
+    /* Made parkImage its own class in case I want to add more images
+    to other sections in the future with different specifications. I wanted
+    the park images to have the same specifications so that they matched each
+    other and made the amusement part section look consistent. They are centered
+    and if their section of the page (the image, left of the image, or right
+    of the image) is clicked, the user will be take to the appropriate park's
+    website (Carowinds or Cedar Point, depending on which image is clicked).
+    Added a decorative, dotted border around each image in pink to match other
+    borders on the page. */
+    .parkImage {
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+         width: 40%;
+         border: 1px dotted #e600ac;
+         border-radius: 5px;
+         padding: 5px;
+    }
+
+    /* Referenced this page from W3Schools:
+    https://www.w3schools.com/tags/tag_figcaption.asp */
+    /*  */
+    figcaption{
+        font-style: italic;
+        text-align: center;
+    }
+
+    /* Footer- included school email as contact here. The text is grey to match
+    the rest of the text on the page. The top border is unique from the other
+    borders on the page to definitively separate the header from the rest of the
+    content. It is thicker, dashed, and dark grey. The text is also centered and
+    italicized to make it stand out a bit. The font family is courier to match
+    the rest of the text on the page. */
+    footer {
+        font-family: "Lucida Console", Courier, monospace;
+        font-size: 100%;
+        color: #262626;
+        font-style: italic;
+        text-align: center;
+        border-top: 2px dashed #262626;
+    }
