@@ -1,0 +1,895 @@
+<!-- Name: Kaylin Ridge -->
+<!-- CS Username: kridge -->
+<!-- Email: kaylin_ridge@student.uml.edu -->
+<!-- Date of Creation: 9 October 2020 -->
+<!-- Date of Upload: 18 October 2020 (Extension Approved by Professor) -->
+<!-- GUI Programming I Autumn 2020 (91.61) -->
+
+<!-- Description: Bootstrap-enhanced website for Homework 4. I greatly improved
+the navigation bar and made it mobile-friendly using Bootstrap's navigation bar.
+I chose the dark theme to better match my website. When small, the navigation
+bar becomes a drop-down burger icon. I added emojis and improved the
+way that images display by using image-fluid. I changed the lists for parks to be
+striped tables and added additional information about each park (year opened and size
+in acres). I added carousels of images to the "Video Games" section and the
+"Music Section". The Music Section, which is new, also includes a list of
+favorite songs displayed as a striped table, showing the song title, artist, album,
+and year of release. I added a picture of the costume I am currently trying to
+make to the "sewing" section. I altered the footer to include a "Thanks for
+visiting my website" message and added links to Handshake and Github. I used
+Bootstrap's rows and columns system to ensure that the footer will look nice
+on mobile screens as well as larger screens. In general, the content of the
+website is now much better organized and is able to display properly on screens
+of all sizes. The use of containers and jumbotrons allowed me to more clearly
+split up my content. I added two new articles to my "School and Work" section,
+"Coursework" and "Skills", both of which are organized using headings and
+bullet points. I also used Bootstrap's rows and columns system to ensure that
+the three articles would remain readable on smaller devices.  -->
+
+<!-- Image Sources: -->
+<!-- Carowinds Park Map: -->
+<!-- https://twitter.com/carowinds/status/972890915768537088-->
+<!-- Cedar Point Image: -->
+<!-- https://www.cleveland.com/entertainment/2020/06/cedar-point-will-open-july-9-kings-island-on-july-2.html -->
+<!-- Crash Bandicoot Box Art Image: -->
+<!-- https://www.mobygames.com/images/covers/l/86029-crash-bandicoot-playstation-front-cover.jpg -->
+<!-- Pokemon Sapphire Box Art: -->
+<!-- https://www.mobygames.com/images/covers/l/31130-pokemon-sapphire-version-game-boy-advance-front-cover.jpg -->
+<!-- FFXIV Heavensward Expansion Image: -->
+<!-- https://cdn3.dualshockers.com/wp-content/uploads/2013/05/A-Realm-Reborn-Box-Art-ds1-1340x1340.jpg -->
+<!-- Yakuza 0 Box Art -->
+<!-- https://www.mobygames.com/images/covers/l/379888-yakuza-0-playstation-4-front-cover.png -->
+<!-- Ruby Concept art (Property of Rooster Teeth LLC): -->
+<!-- https://i.pinimg.com/originals/f1/f2/4c/f1f24ca93d5ecf1aaab396634648d0a8.png -->
+<!-- Album Covers -->
+<!-- TATU Happy Smiles: https://images-na.ssl-images-amazon.com/images/I/515eDDWSOvL._SX355_.jpg -->
+<!-- Duran Duran Rio: https://upload.wikimedia.org/wikipedia/en/a/ac/DuranRio.jpg -->
+<!-- Supergrass Supergrass: https://cdn.shopify.com/s/files/1/1335/6731/products/KCD_1248.jpg?v=1506602569 -->
+<!-- Nightwish Oceanborn: https://images-na.ssl-images-amazon.com/images/I/817J-3HFMWL._SL1200_.jpg -->
+<!-- Var. Artists Super Eurobeat: https://i.ebayimg.com/images/g/rQgAAOSw32lcjeoS/s-l300.jpg -->
+<!-- ABBA Thanks for the Music: https://img.discogs.com/YJnwSw2P02dZ34OHUUn72bgmFMY=/fit-in/599x600/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-1281000-1206061520.jpeg.jpg -->
+<!-- Kamelot Black Halo: https://m.media-amazon.com/images/I/81cS8BFt49L._SS500_.jpg -->
+<!-- Kaiser Chiefs Education Education Education and War: https://consequenceofsound.net/wp-content/uploads/2014/03/kaiser-chiefs.jpg?quality=80&w=807 -->
+<!-- Lemon Demon Spirit Phone: https://i2.cdn.hhv.de/catalog/shop_detail_zoom/00736/736812_1.jpg -->
+<!-- Orion Experience Cosmic Candy: https://e.snmc.io/i/600/w/a90679d5c653405d7a286f4810503f79/1938262 -->
+<!-- Var. Artists Super Eurobeat Final Selection: https://img.discogs.com/Ezs7FfiJT-gYVJodPFC5tZZui9g=/fit-in/600x608/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-5895302-1405669549-2152.jpeg.jpg -->
+<!-- Sabaton Great War: https://upload.wikimedia.org/wikipedia/en/4/48/Sabaton_-_The_Great_War.jpg -->
+
+<!-- This is the HTML page -->
+
+<!-- Declaring that this is HTML5 and that language is English. -->
+<!DOCTYPE html>
+<html lang="en">
+
+    <!-- Header. Specified character encoding (as reccomended by --
+    https://www.sitepoint.com/a-minimal-html-document-html5-edition/ )
+    to ensure that page loads properly, but this caused a validation error
+    When it removed that line, it worked fine and validated. Also includes
+    link to CSS and title. (The title displays on the tab the website is
+    open in!). Edit: Re-added "<meta charset = "utf-8">" for HW4. -->
+
+    <!-- For HW4: Added meta char set because I forgot it last time. Next line
+    under that makes the content fit the size of the device screen and sets
+    zoom level to one. Added tags from starter template. Updated link to
+    style sheet to use Bootstrap's CSS. -->
+
+    <head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Links to Bootstrap's CSS style sheet, taken from the Bootstrap
+        website here: https://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+        <!-- Link to my CSS for this assignment -->
+        <link rel = "stylesheet" type = "text/css" href = "Homework4BootstrapCss.css">
+
+        <title>
+            Homework 4!
+        </title>
+    </head>
+
+    <body>
+
+        <!-- New and improved navigation bar. Code altered from Boostrap
+        website's example for navbar:
+        https://getbootstrap.com/docs/4.0/components/navbar/
+        This is better than my previous navigation system because when the page
+        shrinks, the navigation bar is still accessible through a drop-down
+        menu, which is opened by a button. This navigation bar also has a 'brand'
+        whereas the previous one did not. I used this to indicate what the
+        navigation bar is for. The links lead to their respective
+        homework assignments. The bar now sits at the top of the page and
+        disappears if the user scrolls. This is much better for the "mobile
+        first" approach associated with Bootstrapw. Having the navigation bar
+        be at the very top of the page and stay there allows more room for
+        content and makes the page feel less cramped. -->
+
+        <div class = "container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="navbar-brand">
+                    GUI I Homework Directory:
+                </div>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://cs.uml.edu/~kridge/index.html">Homework 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://cs.uml.edu/~kridge/Homework3.html">Homework 3</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://cs.uml.edu/~kridge/Homework4.html">Homework 4</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://cs.uml.edu/~kridge/Homework5.html">Homework 5</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://cs.uml.edu/~kridge/Homework6.html">Homework 6</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://cs.uml.edu/~kridge/Homework7.html">Homework 7</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Container will put padding around everything. -->
+        <div class = "container">
+            <!-- Page Header - adds space around text and enlarges contained
+            text. -->
+            <div class = "page-header">
+                <h1>
+                    My Autumn 2020 GUI Programming I Website: Bootstrap Edition
+                </h1>
+            </div>
+
+            <div class = "jumbotron">
+                <h4>
+                    A Brief Introduction
+                </h4>
+                <p>
+                    My name is Kaylin ("Kay") Ridge. I am a senior at UMass Lowell pursuing a
+                    major in computer science and a minor in Italian studies. In addition
+                    to my general computer science curriculum, I have studied mobile
+                    application programming. I am currently enrolled in COMP 4610, or
+                    Graphic User Interface Programming I, which is the course for which
+                    this website has been created. This website currently serves to
+                    introduce myself, my experiences, my interests, and my ability
+                    to utilize HTML, CSS, and Bootstrap. It also has a directory
+                    for this course's homework assigments.
+                </p>
+            </div>
+
+            <!-- School & Work Section -->
+
+            <h3> 🏫 School & Work 💻 </h3>
+
+            <div class = "jumbotron">
+            <!-- Making it so that when screen is large, content will take up
+            4 of available 12 columns. When screen is medium, content will
+            take up 4, when small it will take up 6, and when extra small will
+            take up all 12. -->
+                <div class = "row">
+                    <div class = "col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <h5>
+                            My work Experience
+                        </h5>
+                        During the summer of 2015, I worked as an intern at
+                        Microsoft's Charlotte campus for six weeks. I was part of
+                        a group of five students that were chosen to
+                        participate in Microsoft's first internship program
+                        for high school students outside of their main campus in
+                        Redmond, Washington. I shadowed employees and assisted with
+                        various tasks, such as repairing employee hardware and
+                        upgrading laptops to Windows 10 from Windows 8. I also
+                        assisted with Microsoft's annual "DigiGirlz" summer camp,
+                        which aims to get more young women interested in STEM.
+                        During my internship, I also practiced coding in Java and
+                        created some very basic games using Unity and C#. I also
+                        gained knowledge of culture in the workplace, such as
+                        appropriate attire and behavior, expectations during
+                        business meetings, event planning, and giving presentations.
+                    </div>
+                    <div class = "col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <h5>
+                            Coursework
+                        </h5>
+                        <h6> For Major (Computer Science) </h6>
+                            <ul>
+                                <li> Graphic User Interface Programming I </li>
+                                <li> Health & Computer Science </li>
+                                <li> Mobile App Programming I-II </li>
+                                <li> Organization of Programming Languages </li>
+                                <li> Operating Systems </li>
+                                <li> Analysis of Algorithms </li>
+                                <li> Computer Architecture </li>
+                                <li> Assembly Language Programming </li>
+                                <li> Foundation of Computer Science </li>
+                                <li> Probability & Statistics I </li>
+                                <li> Compuing I-IV </li>
+                                <li> Calculus I-II </li>
+                                <li> Logic Design </li>
+                                <li> Discrete Structures I-II </li>
+                            </ul>
+                        <h6> For Minor (Italian studies) </h6>
+                            <ul>
+                                <li> Italian I-IV and Culture </li>
+                                <li> Modern & Contemporary Italian </li>
+                                <li> Advanced Italian Conversation & Composition </li>
+                            </ul>
+                        <h6> Other Courses </h6>
+                            <ul>
+                                <li> Intro to Electrical & Computer Engineering </li>
+                                <li> Engineering and Ethics </li>
+                                <li> Intro to Sociology </li>
+                                <li> Intro to Psychological Science </li>
+                                <li> German I & Culture </li>
+                                <li> Criminology </li>
+                                <li> Physics I </li>
+                                <li> Chemistry I </li>
+                                <li> College Writing I & II </li>
+                                <li> Principles of Biology I-II </li>
+                                <li> Experimental Biology I-II </li>
+                            </ul>
+                    </div>
+                    <div class = "col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <h5> Skills </h5>
+                        <h6> Programing Languages Worked With </h6>
+                        <ul>
+                            <li> C </li>
+                            <li> C++ </li>
+                            <li> C# </li>
+                            <li> Java </li>
+                            <li> Python </li>
+                        </ul>
+                        <h6> Applications </h6>
+                        <ul>
+                            <li> Android Studio </li>
+                            <li> Arduino </li>
+                            <li> Atom </li>
+                            <li> Microsoft Office Suite </li>
+                            <li> Paint.NET </li>
+                            <li> Unity </li>
+                            <li> Visual Studio </li>
+                        </ul>
+                    <h6> Operating Systems </h6>
+                        <ul>
+                            <li> Windows 10 </li>
+                            <li> Linux (Ubuntu) </li>
+                        </ul>
+                    <h6> International Languages </h6>
+                        <ul>
+                            <li> Italian (Semi-Fluent) </li>
+                            <li> German (Conversational) </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interests Section -->
+            <h2> ✨ My Interests ✨ </h2>
+
+            <div class = "jumbotron">
+                <h3> 🎢 Amusement Parks 🎡 </h3>
+                <h5> Parks I've visited </h5>
+                <!--  A table of parks I've visited. To create this table, I
+                referenced the following page of Bootstrap's website:
+                https://getbootstrap.com/docs/4.0/content/tables/-->
+                <div class = "table table-responsive">
+                    <table class = "table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope = "col"> Park Name </th>
+                                <th scope = "col"> City </th>
+                                <th scope = "col"> State </th>
+                                <th scope = "col"> Year Visited </th>
+                                <th scope = "col"> Still Exists </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope = "row"> Walt Disney World </th>
+                                <td> Orlando </td>
+                                <td> FL </td>
+                                <td> 2001 </td>
+                                <td> Y </td>
+                            </tr>
+                            <tr>
+                                <th scope = "row"> Universal Orlando </th>
+                                <td> Orlando </td>
+                                <td> FL </td>
+                                <td> 2011 </td>
+                                <td> Y </td>
+                            </tr>
+                            <tr>
+                                <th scope = "row"> Carowinds </th>
+                                <td> Charlotte </td>
+                                <td> NC </td>
+                                <td> 2000 - 2019 </td>
+                                <td> Y </td>
+                            </tr>
+                            <tr>
+                                <th scope = "row"> Tweetsie Railroad </th>
+                                <td> Blowing Rock </td>
+                                <td> NC </td>
+                                <td> ~ 2005 </td>
+                                <td> Y </td>
+                            </tr>
+                            <tr>
+                                <th scope = "row"> Myrtle Beach Pavillion </th>
+                                <td> Myrtle Beach </td>
+                                <td> SC </td>
+                                <td> ~ 2003 </td>
+                                <td> N </td>
+                            </tr>
+                            <tr>
+                                <th scope = "row"> Family Kingdom </th>
+                                <td> Myrtle Beach </td>
+                                <td> SC </td>
+                                <td> 2006 </td>
+                                <td> Y </td>
+                            </tr>
+                            <tr>
+                                <th scope = "row"> Dollywood </th>
+                                <td> Pigeon Forge </td>
+                                <td> TN </td>
+                                <td> 2009 </td>
+                                <td> Y </td>
+                            </tr>
+                            <tr>
+                                <th scope = "row"> King's Dominion </th>
+                                <td> Doswell </td>
+                                <td> VA </td>
+                                <td> 2012 </td>
+                                <td> Y </td>
+                            </tr>
+                        </tbody>
+                   </table>
+               </div>
+
+              <!-- Changed image class from my custom CSS class to "img-fluid".
+              This is an impovement because it makes the image automatically scale
+              well for mobile devices, and it is a more simple solution than I had
+              previously been using. Referenced code from here:
+              https://getbootstrap.com/docs/4.4/content/images/ -->
+              <figure>
+                  <a href = https://www.carowinds.com/>
+                      <img src= "parkImages/CarowindsMap2018.jpg" alt="Park Map" class = "img-fluid">
+                  </a>
+                  <!-- Figcaption from W3Schools: https://www.w3schools.com/tags/tag_figcaption.asp-->
+                  <figcaption>
+                      A Map of Carowinds Amusement Park. This is the park that I have
+                      visited the most.
+                      <br>
+                      Clicking above will take you to the park's website.
+                  </figcaption>
+              </figure>
+
+              <h5> Parks I Want to Visit (In the US) </h5>
+              <!--  A table of parks I've visited. To create this table, I
+              referenced the following page of Bootstrap's website:
+              https://getbootstrap.com/docs/4.0/content/tables/-->
+              <div class = "table table-responsive">
+                  <table class = "table table-striped">
+                      <thead>
+                          <tr>
+                              <th scope = "col"> Park Name </th>
+                              <th scope = "col"> City </th>
+                              <th scope = "col"> State </th>
+                              <th scope = "col"> Year Opened </th>
+                              <th scope = "col"> Size </th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <th scope = "row"> Cedar Point </th>
+                              <td> Sandusky </td>
+                              <td> OH </td>
+                              <td> 1870 </td>
+                              <td> 364 Acres </td>
+                          </tr>
+                          <tr>
+                              <th scope = "row"> King's Island </th>
+                              <td> Mason </td>
+                              <td> OH </td>
+                              <td> 1972 </td>
+                              <td> 364 Acres <td>
+                          </tr>
+                          <tr>
+                              <th scope = "row"> Six Flags New England </th>
+                              <td> Agawam </td>
+                              <td> MA </td>
+                              <td> 1870 </td>
+                              <td> 235 Acres </td>
+                          </tr>
+                          <tr>
+                              <th scope = "row"> Canobie Lake Park </th>
+                              <td> Salem </td>
+                              <td> NH </td>
+                              <td> 1902 </td>
+                              <td> Unlisted </td>
+                          </tr>
+                          <tr>
+                              <th scope = "row"> Hershey Park </th>
+                              <td> Hershey </td>
+                              <td> PA </td>
+                              <td> 1906 </td>
+                              <td> 121 Acres </td>
+                          </tr>
+                          <tr>
+                              <th scope = "row"> Kennywood </th>
+                              <td> West Mifflin </td>
+                              <td> PA </td>
+                              <td> 1899 </td>
+                              <td> 80 Acres </td>
+                          </tr>
+                          <tr>
+                              <th scope = "row"> Six Flags Fiesta Texas </th>
+                              <td> San Antonio </td>
+                              <td> TX </td>
+                              <td> 1992 </td>
+                              <td> 200 Acres </td>
+                          </tr>
+                          <tr>
+                              <th scope = "row"> Busch Gardens Williamsburg </th>
+                              <td> Williamsburg </td>
+                              <td> VA </td>
+                              <td> 1975 </td>
+                              <td> 383 Acres </td>
+                          </tr>
+                      </tbody>
+                 </table>
+             </div>
+
+             <figure>
+                 <a href = https://www.cedarpoint.com/>
+                     <img src= "parkImages/cPoint.jpg" alt="Cedar Point" class = "img-fluid">
+                 </a>
+                 <!-- Figcaption from W3Schools: https://www.w3schools.com/tags/tag_figcaption.asp-->
+                 <figcaption>
+                     A Picture of Cedar Point Amusement Park. This is the park that I most
+                     want to visit.
+                     <br>
+                     Clicking above will take you to the park's website.
+                 </figcaption>
+             </figure>
+         </div>
+
+
+        <!-- Video Games Section: Using "Carousel" for Images. -->
+        <!-- Referenced this to create the Carousel:
+        https://getbootstrap.com/docs/4.5/components/carousel/
+        Image sources included in header. -->
+        <div class = "jumbotron">
+            <h3> 🎮 Video Games 🕹️ </h3>
+                <p>
+                    Video games have been a favorite passtime of mine for my entire life.
+                    As a child, I mainly played games on the Play Station 1, Play Station 2,
+                    and Gameboy Advanced SP. Later on, I got into PC gaming and that is
+                    how I play most of my games now, though I also have an XBox One and
+                    a Nintendo 2DS. I have created a few video games myself. In high school,
+                    I created a few very basic games using Scratch, Unity, and GameMaker.
+                    More recently, I worked with a partner to develop a mobile game for
+                    my Mobile Application Programming II course using Unity. Below is a
+                    slideshow of the box art of four of my favorite games.
+                </p>
+
+                <!-- Carousel Content. -->
+                <div id="carouselGames" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="gameImages/Crash.jpg" class="d-block w-100" alt="Crash Bandicoot">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="gameImages/Sapphire.jpg" class="d-block w-100" alt="Pokemon Sapphire">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="gameImages/FFARR.jpg" class="d-block w-100" alt="FFXIV">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="gameImages/Yakuza.jpg" class="d-block w-100" alt="Yakuza 0">
+                       </div>
+                    </div>
+                    <!-- Carousel Controls: Move left or right. -->
+                    <a class="carousel-control-prev" href="#carouselGames" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                        <a class="carousel-control-next" href="#carouselGames" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+        <div class = "jumbotron">
+            <h3> 🌎 Foreign Languages 🇮🇹 </h3>
+            <p>
+                I have been interested in foreign languages and cultures from a
+                young age. I have taken several courses in Spanish, German, and
+                Italian. I am semi-fluent in Italian and can hold basic conversations
+                in German. I don't remember much Spanish because I took it when I
+                was very young, but I would like to re-learn it.
+                I would also like to learn Norwegian, Japanese, and Russian.
+            </p>
+        </div>
+
+        <!-- Traveling goes here -->
+        <div class = "jumbotron">
+            <h3> ✈️ Traveling 🧳 </h3>
+            <h5> States I Have Been To </h5>
+            <ol>
+                <li> California </li>
+                <li> Connecticut </li>
+                <li> Delaware </li>
+                <li> Florida </li>
+                <li> Georgia </li>
+                <li> Massachusetts </li>
+                <li> Maryland </li>
+                <li> New Hampshire </li>
+                <li> New Jersey </li>
+                <li> New York </li>
+                <li> North Carolina </li>
+                <li> Pennsylvania </li>
+                <li> Rhode Island </li>
+                <li> South Carolina </li>
+                <li> Tennessee </li>
+                <li> Vermont </li>
+                <li> Virginia </li>
+                <li> West Virginia </li>
+            </ol>
+            <h5> Countries I Would Like to Visit </h5>
+            <ol>
+                <li> Austria 🇦🇹 </li>
+                <li> Canada 🇨🇦 </li>
+                <li> Croatia 🇭🇷 </li>
+                <li> Egypt 🇪🇬 </li>
+                <li> Estonia 🇪🇪 </li>
+                <li> Germany 🇩🇪 </li>
+                <li> Greece 🇬🇷 </li>
+                <li> India 🇮🇳 </li>
+                <li> Ireland 🇮🇪 </li>
+                <li> Italy 🇮🇹 </li>
+                <li> Japan 🗾 🇯🇵 </li>
+                <li> Latvia 🇱🇻 </li>
+                <li> Lithuania 🇱🇹 </li>
+                <li> Mexico 🇲🇽 </li>
+                <li> Norway 🇳🇴 </li>
+                <li> Romania 🇷🇴 </li>
+                <li> Russia 🇷🇺 </li>
+                <li> South Korea 🇰🇷 </li>
+                <li> Switzerland 🇨🇭 </li>
+                <li> Vietnam 🇻🇳 </li>
+            </ol>
+        </div>
+
+         <div class = "jumbotron">
+             <h3>🎼 Music 🎶</h3>
+             <p>
+                 Like video games, music has consistenly been a large part of my life.
+                 I have been playing the flute since 2010, and participated in both
+                 concert band and marching band before starting college. I picked up
+                 the Ukulele in summer of 2016 and can play a few songs on it as
+                 long as I have sheet music, but am by no means great at it yet.
+             </p>
+             <p>
+                 In addition to playing music, I also enjoy listening to it. Below
+                 are a table of my favorite songs and a slideshow of the art for
+                 some of my favorite albums.
+             </p>
+             <div class = "table table-responsive">
+                 <table class = "table table-striped">
+                     <thead>
+                         <tr>
+                             <th scope = "col"> Song Title </th>
+                             <th scope = "col"> Band </th>
+                             <th scope = "col"> Album </th>
+                             <th scope = "col"> Release Year </th>
+                         </tr>
+                     </thead>
+                     <tbody>
+                         <tr>
+                             <th scope = "row"> I Have a Dream </th>
+                             <td> ABBA </td>
+                             <td> Voulez-Vous </td>
+                             <td> 1980 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Lay All Your Love on Me </th>
+                             <td> ABBA </td>
+                             <td> Super Trouper </td>
+                             <td> 1979 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Have You Ever Seen the Rain </th>
+                             <td> Creedence Clearwater Revival </td>
+                             <td> Pendulum </td>
+                             <td> 1970 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> A Perfect Hero </th>
+                             <td> Chris Stanton </td>
+                             <td> Super Eurobeat Presents Initial D Final D Selection Album </td>
+                             <td> 2014 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Déjà Vu </th>
+                             <td> Dave Rodgers </td>
+                             <td> Super Eurobeat presents Euromach 2 </td>
+                             <td> 1999 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> La Guerra di Piero </th>
+                             <td> Fabrizio De Andrè </td>
+                             <td> Tutto Fabrizio De André </td>
+                             <td> 1966 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Lady of Ice </th>
+                             <td> Fancy </td>
+                             <td> Contact </td>
+                             <td> 1986 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Rhiannon </th>
+                             <td> Fleetwood Mac </td>
+                             <td> Life Becoming a Landslide </td>
+                             <td> 1975 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Dreams </th>
+                             <td> Fleetwood Mac </td>
+                             <td> Rumours </td>
+                             <td> 1977 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> I Am Mister Blaster </th>
+                             <td> Garcon </td>
+                             <td> Super Eurobeat Presents Initial D Final D Selection </td>
+                             <td> 2014 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> The Jungle is on Fire </th>
+                             <td> J-Stark </td>
+                             <td> SUPER EUROBEAT VOL. 226 </td>
+                             <td> 2013 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Cannons </th>
+                             <td> Kaiser Chiefs </td>
+                             <td> Education, Education, Education & War </td>
+                             <td> 2014 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Aurora Borealis </th>
+                             <td> Lemon Demon </td>
+                             <td> I am Become Christmas </td>
+                             <td> 2013 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Plastic Love </th>
+                             <td> Mariya Takeuchi </td>
+                             <td> Variety </td>
+                             <td> 1984 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Irgendwie, Irgendwo, Irgendwann </th>
+                             <td> Nena </td>
+                             <td> Feuer und Flamme </td>
+                             <td> 1985 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Stargazer </th>
+                             <td> Nightwish </td>
+                             <td> Oceanborn </td>
+                             <td> 1998 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Devil & The Deep Dark Ocean </th>
+                             <td> Nightwish </td>
+                             <td> Oceanborn </td>
+                             <td> 1998 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Maybe Tonite </th>
+                             <td> Norma Sheffield </td>
+                             <td> SUPER EUROBEAT presents INITIAL D </td>
+                             <td> 1998 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Blood and Money </th>
+                             <td> The Orion Experience </td>
+                             <td> Cosmic Candy </td>
+                             <td> 2006 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> The Tempest </th>
+                             <td> Pendulum </td>
+                             <td> In Silico </td>
+                             <td> 2008 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Army of the Night </th>
+                             <td> Powerwolf </td>
+                             <td> Blessed & Posessed </td>
+                             <td> 2015 </td>
+                        </tr>
+                        <tr>
+                             <th scope = "row"> Amerika </th>
+                             <td> Rammstein </td>
+                             <td> Reise, Reise </td>
+                             <td> 2004 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Deutschland </th>
+                             <td> Rammstein </td>
+                             <td> Rammstein </td>
+                             <td> 2019 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Renegade </th>
+                             <td> Styx </td>
+                             <td> Pieces of Eight </td>
+                             <td> 1978 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Mary </th>
+                             <td> Supergrass </td>
+                             <td> Supergrass </td>
+                             <td> 1999 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Moving </th>
+                             <td> Supergrass </td>
+                             <td> Supergrass </td>
+                             <td> 1999 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> White Foxes </th>
+                             <td> Susanne Sundfør </td>
+                             <td> The Silicone Veil </td>
+                             <td> 2012 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> L'Italiano </th>
+                             <td> Toto Cutugno </td>
+                             <td> L'Italiano </td>
+                             <td> 1983 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> The Top </th>
+                             <td> Ken Blast </td>
+                             <td> Album Super Eurobeat Vol. 217 </td>
+                             <td> 2011 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Non L'hai Mica Capito </th>
+                             <td> Vasco Rossi </td>
+                             <td> Colpa d'Alfredo </td>
+                             <td> 1980 </td>
+                         </tr>
+                         <tr>
+                             <th scope = "row"> Illusion </th>
+                             <td> VNV Nation </td>
+                             <td> Judgement </td>
+                             <td> 2007 </td>
+                         </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- Carousel Content. -->
+            <div id="carouselMusic" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="musicImages/AbbaThankyou.jpg" class="d-block w-100" alt="Thank You for the Music">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="musicImages/blackHalo.jpg" class="d-block w-100" alt="Black Halo">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="musicImages/cosmicCandy.jpg" class="d-block w-100" alt="Cosmic Candy">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="musicImages/DuranRio.jpg" class="d-block w-100" alt="Rio">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="musicImages/EducationKC.jpg" class="d-block w-100" alt="Education, Education, Education, & War">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="musicImages/euro2.jpg" class="d-block w-100" alt="Eurobeat Final Selection">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="musicImages/euroBeat.jpg" class="d-block w-100" alt="Eurobeat">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="musicImages/GreatWar.jpg" class="d-block w-100" alt="Great War">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="musicImages/happySmiles.jpg" class="d-block w-100" alt="Happy Smiles">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="musicImages/Oceanborn.jpg" class="d-block w-100" alt="Oceanborn">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="musicImages/spiritPhone.jpg" class="d-block w-100" alt="Spirit Phone">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="musicImages/Supergrass.jpg" class="d-block w-100" alt="Supergrass">
+                    </div>
+                </div>
+                <!-- Carousel Controls: Move left or right. -->
+                <a class="carousel-control-prev" href="#carouselMusic" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                    <a class="carousel-control-next" href="#carouselMusic" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+
+        <div class = "jumbotron">
+            <h3> 🧵 Sewing 🧶 </h3>
+            <p>
+                I have always had an interest in sewing. My favorite things to sew
+                are plushies and costumes. My current projects are sewing a costume
+                of the character Ruby Rose from the series RWBY and teaching myself
+                to crochet, both of which have been put on hold due to time constraints
+                caused by school.
+            </p>
+            <figure>
+                <img src= "sewingImages/Ruby.jpg" alt="Ruby" class = "img-fluid">
+                <!-- Figcaption from W3Schools: https://www.w3schools.com/tags/tag_figcaption.asp-->
+                <figcaption>
+                    The official concept art for the costume of the character that
+                    I am currently working on. I started the project over the
+                    summer and have been using this as one of my main reference images.
+                    <br>
+                </figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <!-- jQuery and Bootstrap Bundle (includes Popper) from Bootstrap website.
+    https://getbootstrap.com/docs/4.5/getting-started/introduction/, under
+    "Option 1". This is necessary because many parts of Bootstrap will not
+    work without Javascript. This uses the jsdelivr CDN. -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    </body>
+
+    <!-- Footer: contact info  -->
+
+    <div class = "container">
+        <footer>
+            <div class = "row">
+                <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <h3> Thanks for Visiting my Website! </h3>
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    Email: kaylin_ridge@student.uml.edu
+                </div>
+            </div>
+            <div class = "row">
+                <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <a href = "https://app.joinhandshake.com/users/19136040"> Handshake </a>
+                </div>
+                <div class = "col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <a href = "https://github.com/kayridge"> Github </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</html>
