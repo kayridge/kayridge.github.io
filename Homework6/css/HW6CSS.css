@@ -1,0 +1,112 @@
+/*
+Name: Kaylin Ridge
+CS Username: kridge
+Email: kaylin_ridge@student.uml.edu
+Date of Creation: 7 November 2020
+Date of Upload: 12 November 2020
+GUI Programming I Autumn 2020 (91.61)
+
+Description: The purpose of this assignment was to practice form
+validation using jQuery. I modified HW5, which generated a multiplication
+table and displayed errors at the bottom of the page. With the use of jQuery,
+the error messages now disaplay under the field with the bad input instead of
+by the submit button. This gives the user better feedback on what was wrong
+with their input.
+
+Main Color Palette:
+Gradient Grey: #666666
+Gradient Teal: #009999
+Body Text Color: #cc5eff (Light purple)
+Container Back Color: #343a40 (Dark Grey)
+Jumbotron Back Color:  #c7abbc (Pastel Pink)
+Jumbotron Text color: #006356 (Dark Teal)
+FOR THIS PROJECT:
+Text color within table (gold): #b38f00
+Row stripe (Dark purple): #400025
+Row stripe (Darker purple): #240015
+*/
+
+body {
+    background-image: linear-gradient(#666666, #009999);
+    color: #cc5eff;
+}
+
+label {
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+.container {
+    background-color: #343a40;
+    padding-top: 2%;
+    padding-bottom: 5%;
+    color: #009999;
+}
+
+.row {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+/* Styling table */
+#multiTable {
+    max-width: inherit;
+    max-height: 500px;
+    padding-top: 4%;
+    padding-bottom: 2%;
+}
+
+/* Referenced this code to create a striped table by making
+even & odd rows different colors:
+https://www.w3schools.com/howto/howto_css_table_zebra.asp */
+tr:nth-child(even) {
+    background-color: #400025;
+}
+
+tr:nth-child(odd) {
+    background-color: #240015;
+}
+
+/* Styling inside of table - rows and data*/
+tr, td {
+    color: #b38f00;
+    padding: 0.5%;
+    text-align: center;
+    border: 3px dashed #006356;
+}
+
+/* Table header - row & column with factors */
+th {
+    color: #b38f00;
+    padding: 0.5%;
+    text-align: center;
+    border: 4px solid #006356;
+    background-color: black;
+    font-weight: bold;
+}
+
+/* Jumbotron- ALWAYS use WITHIN container!! Makes text bigger
+and puts it in a box. Background color and text color specified. */
+.jumbotron {
+    background-color: #c7abbc;
+    color: #006356;
+    align-items: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+h5 {
+    font-weight: bold;
+    text-align: center;
+}
+
+h6 {
+    font-style: italic;
+    text-align: center;
+}
