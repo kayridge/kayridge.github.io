@@ -81,7 +81,7 @@ $(document).ready(function () {
       });
       $("#numOne").change(function () {
         var newVal = this.newVal;
-        $("#xLowerSlider").slider("newVal", pareseInt(newVal));
+        $("#xLowerSlider").slider("newVal", parseInt(newVal));
         pullNums();
     });
 
@@ -98,7 +98,7 @@ $(document).ready(function () {
         });
         $("#numTwo").change(function () {
           var newVal = this.newVal;
-          $("#xUpperSlider").slider("newVal", pareseInt(newVal));
+          $("#xUpperSlider").slider("newVal", parseInt(newVal));
           pullNums();
         });
 
@@ -115,7 +115,7 @@ $(document).ready(function () {
           });
           $("#numThree").change(function () {
             var newVal = this.newVal;
-            $("#yLowerSlider").slider("newVal", pareseInt(newVal));
+            $("#yLowerSlider").slider("newVal", parseInt(newVal));
             pullNums();
           });
 
@@ -132,7 +132,7 @@ $(document).ready(function () {
           });
           $("#numFour").change(function () {
             var newVal = this.newVal;
-            $("#yUpperSlider").slider("newVal", pareseInt(newVal));
+            $("#yUpperSlider").slider("newVal", parseInt(newVal));
             pullNums();
           });
 
