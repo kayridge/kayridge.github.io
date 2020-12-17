@@ -67,7 +67,7 @@ https://www.youtube.com/watch?v=C22hQKE_32c */
 
 /* NO BONUS:  */
 .boardSpaceDefault {
-    background-image: url("./graphics_data/BlankPlace.jpg");
+    /* background-image: url("./graphics_data/BlankPlace.jpg"); */
     display: inline-block;
     height: 175px;
     width: 190px;
@@ -78,7 +78,7 @@ https://www.youtube.com/watch?v=C22hQKE_32c */
 
 /* DOUBLE LETTER: Third tile [2] */
 .boardSpaceDL {
-    background-image: url("./graphics_data/DLPlace.jpg");
+    /* background-image: url("./graphics_data/DLPlace.jpg"); */
     display: inline-block;
     height: 175px;
     width: 190px;
@@ -89,7 +89,7 @@ https://www.youtube.com/watch?v=C22hQKE_32c */
 
 /* DOUBLE WORD: Sixth tile [5] */
 .boardSpaceDW {
-    background-image: url("./graphics_data/DWPlace.jpg");
+    /* background-image: url("./graphics_data/DWPlace.jpg"); */
     display: inline-block;
     height: 175px;
     width: 190px;
