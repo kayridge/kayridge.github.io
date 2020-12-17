@@ -240,7 +240,7 @@ function dealTiles() {
 // If word was left blank, returns corresponding message.
 // Otherwise, multiplies value of word by 2 if a tile was placed on
 // a double word bonus tile. Calculates current score. Calls
-// processNewGame (resets board).
+// processNewGame (resets board).  Resets word score to zero.
 function submitWord(){
     if (turnWord != ""){
         if (doubleWord){
@@ -251,6 +251,7 @@ function submitWord(){
     } else {
         document.getElementById("exist").innerHTML = "Word is empty";
     }
+    wordScore = 0;
 }
 
 // Process new game function- Starts new turn.
