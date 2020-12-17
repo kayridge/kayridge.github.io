@@ -1,0 +1,211 @@
+<!--
+Name: Kaylin Ridge
+CS Username: kridge
+Email: kaylin_ridge@student.uml.edu
+Date of Creation: 3 December 2020
+Date of Upload: 16 December 2020 (USING ONE DAY EXTENSION TOKEN)
+GUI Programming I Autumn 2020 (91.61)
+Description: The main purpose of this assignment was to get
+more practice with javascript.
+
+The following features have been implemented:
+// [X] Have main set of scrabble tiles using given
+// json file. Randomly select 7 tiles for a hand. (4)
+// [X] Make letter tiles drag-and-droppable
+// onto Scrabble squares (4)
+// [X] Program can tell which letter tile is placed
+// on which square (4)
+// [X] At least two bonus squares (4)
+// [X] Score calculation, including bonus (4)
+// [X] Player can play as many words as they want
+// until they hit the reset button or quit (3)
+// [X] Board clears after each round (3)
+// [X] Program gives player appropriate number of
+// tiles to make hand have seven tiles again (3)
+// [X] Score kept cumulatively until reset (3)
+// [X] Tiles can only be dragged from rack to
+// board - dragging elsewhere will return to rack (2)
+// [X] Tile cannot be moved once placed on board (2)
+// [X] Every letter after first must be placed directly
+// adjacent to another letter, otherwise will return
+// to rack (2)
+// [X] Can always restart game (2)
+
+Features not implemented:
+Dictionary check (exta credit)
+Full board (extra credit)
+
+Additional feature(s):
+Game displays user's current word while they play
+
+References used:
+To understand arrays in JS: https://www.w3schools.com/js/js_arrays.asp
+To understand random in JS: https://www.w3schools.com/jsref/jsref_random.asp
+To understand drag & drop with JS: https://www.digitalocean.com/community/tutorials/js-drag-and-drop-vanilla-js
+To understand for each in JS: https://www.w3schools.com/jsref/jsref_forEach.asp
+More drag and drop: https://www.youtube.com/watch?v=C22hQKE_32c
+Getting element by id: https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+Inner HTML property: https://www.w3schools.com/jsref/prop_html_innerhtml.asp
+More info on Drag and Drop: https://www.elated.com/res/File/articles/development/javascript/jquery/drag-and-drop-with-jquery-your-essential-guide/card-game.html
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset = "utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Links to Bootstrap's CSS style sheet, taken from the Bootstrap
+        website here: https://getbootstrap.com/docs/4.5/getting-started/introduction/ -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+        <!-- Link to my CSS for this assignment -->
+        <link rel="stylesheet" type = "text/css" href="Scrabble.css">
+
+        <title>
+            Homework 8!
+        </title>
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <div class = "container">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="navbar-brand">
+                    GUI I Homework Directory:
+                </div>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://cs.uml.edu/~kridge/index.html">Homework 2</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://cs.uml.edu/~kridge/Homework3.html">Homework 3</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="https://kayridge.github.io/">Homework 4</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="https://kayridge.github.io/Homework5/HW5.html">Homework 5</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://kayridge.github.io/Homework6/HW6.html">Homework 6</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://kayridge.github.io/Homework7/HW7.html">Homework 7</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Homework 8</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+         </div>
+
+         <div class = "container">
+             <div class = "col-lg-12 col-md-12 col-xs-12">
+                <h2>
+                    Scrabble!
+                </h2>
+                <h3>
+                    Instructions:
+                </h3>
+                <ul>
+                    <h4>
+                        <li> Drag and drop a tile to a square. </li>
+                        <li> Try to form a word with the letters. </li>
+                        <li> Press "SUBMIT" button to submit your word. </li>
+                        <li> Press "RESET" button to restart at any time. </li>
+                    </h4>
+                </ul>
+                <h3>
+                    Rules:
+                </h3>
+                <ul>
+                    <h4>
+                        <li> You cannot remove a tile once it has been placed. </li>
+                        <li> Tiles muct be placed adjacently (no spaces). </li>
+                     </h4>
+                 </ul>
+
+                 <h5>
+                     Note: Scores will not be displayed until player has
+                     taken at least one turn since starting the game.
+                 </h5>
+
+                 <!-- Displays current information for game -->
+                <div class = "fluid-container">
+                    <h5> The value of the word on the board now is </h5>
+                    <h5 id = turnWord></h5>
+                    <h5> The value of your current score is </h5>
+                    <h5 id = currentScore></h5>
+                    <h5> The number of tiles remaining is </h5>
+                    <h5 id = tilesLeft>10</h5>
+                    <h5> Your current word is </h5>
+                    <h5 id = currWord></h5>
+                    <h5 id = exist></h5>
+                </div>
+
+                <br> <br>
+
+                <!-- EMPTY (TOP TILES)/ BOARD HERE
+                7 spaces. Able to drop tiles onto these.
+                Each board space has its own id so it can easily be accessed through
+                JS. Class (boardSpaceDefault, boardSpaceDL, boardSpaceDW) determine
+                what image is displayed on the board space and what bonus will be applied
+                to it, if any.
+                Referenced:
+                https://www.digitalocean.com/community/tutorials/js-drag-and-drop-vanilla-js
+                Tile Bonus Values: [0, 0, DL, 0, 0, DW, 0, 0]--->
+                <div class = "fluid-container" id="board" >
+                    <div id="board0" data-occupied="false" data-index="0"data-special="none"   class = "boardSpaceDefault" ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+                    <div id="board1" data-occupied="false" data-index="1"data-special="none" class = "boardSpaceDefault"  ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+                    <div id="board2" data-occupied="false" data-index="2" data-special="dl" class = "boardSpaceDL"  ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+                    <div id="board3" data-occupied="false" data-index="3"data-special="none" class = "boardSpaceDefault"  ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+                    <div id="board4" data-occupied="false" data-index="4"data-special="none" class = "boardSpaceDefault"  ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+                    <div id="board5" data-occupied="false" data-index="5" data-special="dw" class = "boardSpaceDW"  ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+                    <div id="board6" data-occupied="false"data-index="6"data-special="none" class = "boardSpaceDefault"  ondragover="onDragOver(event);" ondrop="onDrop(event);"></div>
+                </div>
+
+                <br> <br>
+
+                <!-- Draggable tiles here!!
+                7 tiles. Tile are draggable onto board spaces.
+                Each tile has its own id, a letter (starts as empty), the class
+                of letterTile, and its draggable property set to true.
+                Referenced: https://www.digitalocean.com/community/tutorials/js-drag-and-drop-vanilla-js -->
+                <div class = "fluid-container" id="tiles">
+                    <div id="tile0" data-letter="" data-index="0" class = "letterTile" draggable = "true" ondragstart="onDragStart(event);" ></div>
+                    <div id="tile1" data-letter="" data-index="1"class = "letterTile" draggable = "true" ondragstart="onDragStart(event);"></div>
+                    <div id="tile2" data-letter="" data-index="2"class = "letterTile" draggable = "true" ondragstart="onDragStart(event);"></div>
+                    <div id="tile3" data-letter="" data-index="3"class = "letterTile" draggable = "true" ondragstart="onDragStart(event);"></div>
+                    <div id="tile4" data-letter="" data-index="4"class = "letterTile" draggable = "true" ondragstart="onDragStart(event);"></div>
+                    <div id="tile5" data-letter="" data-index="5"class = "letterTile" draggable = "true" ondragstart="onDragStart(event);"></div>
+                    <div id="tile6" data-letter="" data-index="6"class = "letterTile" draggable = "true" ondragstart="onDragStart(event);"></div>
+                </div>
+
+                <br> <br>
+
+                <!-- Reset button here -->
+                <button type = "button" id="btnReset">Reset</button>
+
+                <!-- Submit button here -->
+                <button type = "button" onclick='submitWord()' id="btnSubmit">Submit</button>
+            </div>
+        </div>
+
+        <!-- jQuery and Bootstrap Bundle (includes Popper) from Bootstrap website.
+        https://getbootstrap.com/docs/4.5/getting-started/introduction/, under
+        "Option 1". This is necessary because many parts of Bootstrap will not
+        work without Javascript. This uses the jsdelivr CDN. -->
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <!-- JS- Goes at end of body. -->
+        <script src="Scrabble.js"></script>
+
+    </body>
+</html>
