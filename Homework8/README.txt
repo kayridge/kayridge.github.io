@@ -7,6 +7,9 @@ GUI Programming I Autumn 2020 (91.61)
 Description: The main purpose of this assignment was to get
 more practice with javascript.
 
+Github display: https://kayridge.github.io/Homework8/Scrabble.html
+Repository: https://github.com/kayridge/kayridge.github.io/tree/main/Homework8
+
 The following features have been implemented:
 // [X] Have main set of scrabble tiles using given
 // json file. Randomly select 7 tiles for a hand. (4)
